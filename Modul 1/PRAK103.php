@@ -2,7 +2,7 @@
     $celcius = 37.841;
 
     //Reamur
-    $reamur = rtrim(number_format(($celcius * 4) / 5, 4), '0');;
+    $reamur = rtrim(number_format(($celcius * 4) / 5, 4), '0');
     //Fahrenheit
     $fahrenheit = rtrim(number_format(($celcius * 9/5) + 32, 4), '0');
     //Kelvin
