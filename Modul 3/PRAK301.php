@@ -16,7 +16,7 @@
             while ($num > $loop) {
                 $loop += 1;
                 $color = $loop % 2 == 0 ? 'red' : 'green';
-                echo "<h2 style='color: $color;'>Peserta ke-$loop</h2><br>";
+                echo "<h2 style='color: $color;'>Peserta ke-$loop</h2>";
             }
         }
     ?>

@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         img {
-            width: 25px; /* Atur lebar sesuai kebutuhan Anda */
-            height: auto; /* Biarkan ketinggian mengikuti proporsi asli */
+            width: 25px; 
+            height: auto; 
         }
     </style>
 </head>
+    <?php
+        $tinggi = $_GET['tinggi'] ?? '';
+        $gambar = $_GET['gambar'] ?? '';
+    ?>
 <body>
-    <form method="get">
-        Tinggi : <input type="number" name="tinggi" id="tinggi"> <br>
-        Alamat Gambar : <input type="text" name="gambar" id="gambar"> <br>
+    <form method="get" >
+        Tinggi : <input type="number" name="tinggi" id="tinggi" value="<?php echo htmlspecialchars($tinggi); ?>"> <br>
+        Alamat Gambar : <input type="text" name="gambar" id="gambar" value="<?php echo htmlspecialchars($gambar); ?>"> <br>
         <input type="submit" value="Cetak" name="Submit"> <br>
     </form>
     <?php
-        $tinggi = $_GET['tinggi'] ?? 0;
-        $gambar = $_GET['gambar'] ?? '';
         
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $koson = 0;

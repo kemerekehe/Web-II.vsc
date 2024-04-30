@@ -6,10 +6,10 @@
 </head>
 <body>
     <?php
-        $globalnum = $_GET['num'] ?? 0;
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            if(isset($_GET["Submit"])) {
-                switch($_GET["Submit"]) {
+        $globalnum = $_POST['num'] ?? '';
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(isset($_POST["Submit"])) {
+                switch($_POST["Submit"]) {
                     case "Tambah":
                         $globalnum++;
                         break;
@@ -20,9 +20,11 @@
             }
         }
     ?>
-    <form method="get">
-        Jumlah Bintang <input type="number" name="num" id="num" value="<?php echo htmlspecialchars($globalnum); ?>"><br>
-        <input type="submit" value="Submit" name="Submit"><br><br>
+    <form method="POST">
+        <div class="div" style="display: <?php echo ($globalnum !== '') ? 'none' : 'block';?>">
+            Jumlah Bintang <input type="number" name="num" id="num" value="<?php echo htmlspecialchars($globalnum); ?>"><br>
+            <input type="submit" value="Submit" name="Submit"><br><br>
+        </div>
         <?php 
             if($globalnum > 0) {
                 echo 'Jumlah bintang ' . $globalnum .  '<br><br><br>';
