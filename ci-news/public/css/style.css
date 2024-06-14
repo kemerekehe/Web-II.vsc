@@ -1,0 +1,85 @@
+body {
+    font-family: 'Spectral', serif;
+    background-color: wheat;
+    color: #0D1282;
+    margin: 0;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #0D1282;
+    text-align: left;
+}
+
+th {
+    background-color: #0D1282;
+    color: #EEEDFF;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color:green;
+    font-size: 3rem;
+    margin-top: 50px;
+}
+
+form {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size:large;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #0D1282;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"]{
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Spectral', serif;
+}
+
+
+
+input[type="text"]:focus, input[type="number"]:focus,
+input[type="date"]:focus { 
+    border-color: #0D1282;
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        padding: 12px;
+    }
+}

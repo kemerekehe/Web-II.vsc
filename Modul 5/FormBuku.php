@@ -5,7 +5,6 @@ require 'Model.php';
     $id_buku = isset($_POST['id']) ? $_POST['id'] : null;
     $data = null;
 
-    // Jika id_peminjaman tersedia, ambil data peminjaman dari database
     if ($id_buku) {
         echo $id_buku;
         $data = getById($koneksi, 'buku', 'id_buku', $id_buku);
@@ -26,7 +25,6 @@ require 'Model.php';
         } else {
             insertData($koneksi, 'buku', $arr_data);
         }   
-            // Redirect ke halaman Peminjaman setelah operasi berhasil
         header('Location: Buku.php');
         exit(); 
     }

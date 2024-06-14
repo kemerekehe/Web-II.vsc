@@ -4,12 +4,10 @@
     $id_peminjaman = isset($_POST['id']) ? $_POST['id'] : null;
     $data = null;
     
-    // Jika id_peminjaman tersedia, ambil data peminjaman dari database
     if ($id_peminjaman) {
         $data = getById($koneksi, 'peminjaman', 'id_peminjaman', $id_peminjaman);
     }
     
-    // Jika metode permintaan adalah POST dan tombol submit ditekan
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         $arr_data = [
             'id_member' => $_POST['id_member'],
@@ -25,10 +23,8 @@
             if (isExist($koneksi, 'id_peminjaman', $_POST['id_peminjaman'], 'peminjaman')) {
                 updateData($koneksi, 'peminjaman', $arr_data, $whereColumn, $whereValue);
             } else {
-                // Jika id_peminjaman kosong, maka lakukan penambahan data baru
                 insertData($koneksi, 'peminjaman', $arr_data);
             }   
-            // Redirect ke halaman Peminjaman setelah operasi berhasil
             header('Location: Peminjaman.php');
             exit();    
         } else {

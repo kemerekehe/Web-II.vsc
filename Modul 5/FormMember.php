@@ -4,7 +4,6 @@ require 'Model.php';
 $id_member = isset($_POST['id']) ? $_POST['id'] : null;
 $data = null;
 
-// Jika id_peminjaman tersedia, ambil data peminjaman dari database
 if ($id_member) {
     $data = getById($koneksi, 'member', 'id_member', $id_member);
 }
@@ -24,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     } else {
         insertData($koneksi, 'member', $arr_data);
     }   
-        // Redirect ke halaman Peminjaman setelah operasi berhasil
+
     header('Location: Member.php');
     exit(); 
 }
